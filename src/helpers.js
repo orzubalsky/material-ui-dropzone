@@ -44,8 +44,8 @@ export function readFile(file) {
 export function parseFile (file, callback) {
     const fileSize   = file.size;
     const chunkSize  = 64 * 1024; // bytes
-    const offset     = 0;
     const self       = this; // we need a reference to the current object
+    let offset       = 0;
     let chunkReaderBlock = null;
 
     const readEventHandler = evt => {
